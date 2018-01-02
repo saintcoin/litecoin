@@ -19,8 +19,13 @@ using namespace std;
 map<uint256, CAlert> mapAlerts;
 CCriticalSection cs_mapAlerts;
 
-static const char* pszMainKey = "040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9";
-static const char* pszTestKey = "04302390343f91cc401d56d68b123028bf52e5fca1939df127f63c6467cdf9c8e2c14b61104cf817d0b780da337893ecc4aaff1309e536162dabbdb45200ca2b0a";
+static const char* pszMainKey = "0457c9f717aad3859b7a7ad46953c1b4f8c6bbc38f69f92c92e5f0aed52a562848b4498cc4a6e9dd512d73b8bae91a8130bc4023b1dfd3d6faca0d53a088178ce3";
+
+// TestNet alerts pubKey
+static const char* pszTestKey = "0467eeecbbe77cdf7189e79b78df56b0c1b91e3ba941d446e783c2470ae8ef7d224a948a9040c614df418720307af6efc216c30c6e33410c6c1f2a2c9fd0487f71";
+
+// TestNet alerts private key
+// "308201130201010420b665cff1884e53da26376fd1b433812c9a5a8a4d5221533b15b9629789bb7e42a081a53081a2020101302c06072a8648ce3d0101022100fffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f300604010004010704410479be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8022100fffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141020101a1440342000467eeecbbe77cdf7189e79b78df56b0c1b91e3ba941d446e783c2470ae8ef7d224a948a9040c614df418720307af6efc216c30c6e33410c6c1f2a2c9fd0487f71"
 
 void CUnsignedAlert::SetNull()
 {
@@ -51,8 +56,8 @@ std::string CUnsignedAlert::ToString() const
     return strprintf(
         "CAlert(\n"
         "    nVersion     = %d\n"
-        "    nRelayUntil  = %"PRI64d"\n"
-        "    nExpiration  = %"PRI64d"\n"
+        "    nRelayUntil  = %"PRId64"\n"
+        "    nExpiration  = %"PRId64"\n"
         "    nID          = %d\n"
         "    nCancel      = %d\n"
         "    setCancel    = %s\n"
@@ -144,7 +149,9 @@ bool CAlert::RelayTo(CNode* pnode) const
 
 bool CAlert::CheckSignature() const
 {
-    CPubKey key(ParseHex(fTestNet ? pszTestKey : pszMainKey));
+    CKey key;
+    if (!key.SetPubKey(ParseHex(fTestNet ? pszTestKey : pszMainKey)))
+        return error("CAlert::CheckSignature() : SetPubKey failed");
     if (!key.Verify(Hash(vchMsg.begin(), vchMsg.end()), vchSig))
         return error("CAlert::CheckSignature() : verify signature failed");
 
@@ -241,7 +248,15 @@ bool CAlert::ProcessAlert(bool fThread)
                 // be safe we first strip anything not in safeChars, then add single quotes around
                 // the whole string before passing it to the shell:
                 std::string singleQuote("'");
-                std::string safeStatus = SanitizeString(strStatusBar);
+                // safeChars chosen to allow simple messages/URLs/email addresses, but avoid anything
+                // even possibly remotely dangerous like & or >
+                std::string safeChars("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890 .,;_/:?@");
+                std::string safeStatus;
+                for (std::string::size_type i = 0; i < strStatusBar.size(); i++)
+                {
+                    if (safeChars.find(strStatusBar[i]) != std::string::npos)
+                        safeStatus.push_back(strStatusBar[i]);
+                }
                 safeStatus = singleQuote+safeStatus+singleQuote;
                 boost::replace_all(strCmd, "%s", safeStatus);
 

@@ -1,6 +1,6 @@
 Building Saint
 
-See doc/readme-qt.rst for instructions on building Saint-Qt,
+See doc/readme-qt.rst for instructions on building Saint QT,
 the intended-for-end-users, nice-graphical-interface, reference
 implementation of Saint.
 
