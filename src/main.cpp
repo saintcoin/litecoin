@@ -2533,6 +2533,12 @@ bool LoadBlockIndex(bool fAllowNew)
     if (!txdb.LoadBlockIndex())
         return false;
 
+//	CBlock(hash=4ebbd54e5b6dcee69a557709d20089072f57356d3fa77d4fb6098125ce4df357, input=010000000000000000000000000000000000000000000000000000000000000000000000da83d8fab385788e819a37927367b827a76707ce1b36faab8af1be43cb0e12bbc8f7495af0ff0f1e2d250b00, 
+//	PoW=00000567116026b8c35396dbc3298a211bb49626079e021d350eab38ba9d4dba, ver=1, hashPrevBlock=0000000000000000000000000000000000000000000000000000000000000000,
+//	nTime=1514797000, nBits=1e0ffff0, nNonce=730413, vtx=1)
+//	CTransaction(hash=bb120ecb43bef18aabfa361bce0767a727b8677392379a818e7885b3fad883da, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+//	CTxOut(nValue=50.00000000, scriptPubKey=0457c9f717aad3859b7a7ad46953c1)
+//	vMerkleTree: bb120ecb43bef18aabfa361bce0767a727b8677392379a818e7885b3fad883da 
     //
     // Init with genesis block
     //
