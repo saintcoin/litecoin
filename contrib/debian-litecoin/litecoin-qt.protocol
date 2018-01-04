@@ -1,6 +1,6 @@
 [Protocol]
-exec=litecoin-qt '%u'
-protocol=litecoin
+exec=saint-qt '%u'
+protocol=saint
 input=none
 output=none
 helper=true

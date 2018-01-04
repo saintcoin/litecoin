@@ -1,2 +1,2 @@
-debian/manpages/litecoind.1
-debian/manpages/litecoin.conf.5
+debian/manpages/saintd.1
+debian/manpages/saint.conf.5

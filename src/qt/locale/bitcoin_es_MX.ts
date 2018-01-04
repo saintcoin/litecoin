@@ -62,12 +62,12 @@
         <translation>Recibiendo direcciones</translation>
     </message>
     <message>
-        <source>These are your Litecoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estas son tus direcciones de Litecoin para enviar pagos. Siempre revise la cantidad y la dirección receptora antes de enviar monedas</translation>
+        <source>These are your Saint addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Estas son tus direcciones de Saint para enviar pagos. Siempre revise la cantidad y la dirección receptora antes de enviar monedas</translation>
     </message>
     <message>
-        <source>These are your Litecoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Estas son tus direcciones Litecoin para recibir pagos. Es recomendado usar una nueva dirección receptora para cada transacción.</translation>
+        <source>These are your Saint addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Estas son tus direcciones Saint para recibir pagos. Es recomendado usar una nueva dirección receptora para cada transacción.</translation>
     </message>
     <message>
         <source>Copy &amp;Label</source>
@@ -152,8 +152,8 @@
         <translation>Confirmar la encriptación de cartera</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR LITECOINS&lt;/b&gt;!</source>
-        <translation>Advertencia: Si encripta su cartera y pierde su contraseña, &lt;b&gt;PERDERÁ TODOS SUS LITECOINS&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SAINTS&lt;/b&gt;!</source>
+        <translation>Advertencia: Si encripta su cartera y pierde su contraseña, &lt;b&gt;PERDERÁ TODOS SUS SAINTS&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -168,8 +168,8 @@
         <translation>Cartera encriptada</translation>
     </message>
     <message>
-        <source>Litecoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your litecoins from being stolen by malware infecting your computer.</source>
-        <translation>Litecoin se cerrará para finalizar el proceso de encriptación. Recuerda que encriptar tu cartera no protege completamente a tus litecoins de ser robadas por malware infectando tu computadora.</translation>
+        <source>Saint will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your saints from being stolen by malware infecting your computer.</source>
+        <translation>Saint se cerrará para finalizar el proceso de encriptación. Recuerda que encriptar tu cartera no protege completamente a tus saints de ser robadas por malware infectando tu computadora.</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
@@ -283,12 +283,12 @@
         <translation>Reindexando bloques en el disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Litecoin address</source>
-        <translation>Enviar monedas a una dirección Litecoin</translation>
+        <source>Send coins to a Saint address</source>
+        <translation>Enviar monedas a una dirección Saint</translation>
     </message>
     <message>
-        <source>Modify configuration options for Litecoin</source>
-        <translation>Modificar las opciones de configuración de Litecoin</translation>
+        <source>Modify configuration options for Saint</source>
+        <translation>Modificar las opciones de configuración de Saint</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -327,20 +327,20 @@
         <translation>Pestañas</translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
-        <translation>nucleo Litecoin</translation>
+        <source>Saint Core</source>
+        <translation>nucleo Saint</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>opciones de la &amp;Linea de comandos</translation>
     </message>
     <message>
-        <source>Show the Litecoin Core help message to get a list with possible Litecoin command-line options</source>
-        <translation>Mostrar mensaje de ayuda del nucleo de Litecoin para optener una lista con los posibles comandos  de Litecoin</translation>
+        <source>Show the Saint Core help message to get a list with possible Saint command-line options</source>
+        <translation>Mostrar mensaje de ayuda del nucleo de Saint para optener una lista con los posibles comandos  de Saint</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Litecoin network</source>
-        <translation><numerusform>%n Activar conexión a la red de Litecoin</numerusform><numerusform>%n Activar conexiones a la red de Litecoin</numerusform></translation>
+        <source>%n active connection(s) to Saint network</source>
+        <translation><numerusform>%n Activar conexión a la red de Saint</numerusform><numerusform>%n Activar conexiones a la red de Saint</numerusform></translation>
     </message>
     <message>
         <source>Up to date</source>
@@ -490,8 +490,8 @@
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Litecoin Core</source>
-        <translation>nucleo Litecoin</translation>
+        <source>Saint Core</source>
+        <translation>nucleo Saint</translation>
     </message>
     <message>
         <source>version</source>
@@ -502,8 +502,8 @@
         <translation>(%1-bit)</translation>
     </message>
     <message>
-        <source>About Litecoin Core</source>
-        <translation>Acerca de Litecoin Core</translation>
+        <source>About Saint Core</source>
+        <translation>Acerca de Saint Core</translation>
     </message>
     <message>
         <source>Usage:</source>
@@ -537,8 +537,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Litecoin Core</source>
-        <translation>nucleo Litecoin</translation>
+        <source>Saint Core</source>
+        <translation>nucleo Saint</translation>
     </message>
     </context>
 <context>
@@ -588,8 +588,8 @@
         <translation>&amp;Etiqueta</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Litecoin network.</source>
-        <translation>Mensaje opcional para agregar a la solicitud de pago, el cual será mostrado cuando la solicitud este abierta. Nota: El mensaje no se manda con el pago a travéz de la red de Litecoin.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Saint network.</source>
+        <translation>Mensaje opcional para agregar a la solicitud de pago, el cual será mostrado cuando la solicitud este abierta. Nota: El mensaje no se manda con el pago a travéz de la red de Saint.</translation>
     </message>
     <message>
         <source>Use this form to request payments. All fields are &lt;b&gt;optional&lt;/b&gt;.</source>
@@ -725,8 +725,8 @@
         <translation>¡La transación fue rechazada! Esto puede ocurrir si algunas de tus monedas en tu cartera han sido gastadas, al igual que si usas una cartera copiada y la monedas fueron gastadas en la copia pero no se marcaron como gastadas.</translation>
     </message>
     <message>
-        <source>Warning: Invalid Litecoin address</source>
-        <translation>Advertencia: Dirección de Litecoin invalida</translation>
+        <source>Warning: Invalid Saint address</source>
+        <translation>Advertencia: Dirección de Saint invalida</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -795,8 +795,8 @@
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Litecoin Core is shutting down...</source>
-        <translation>Apagando el nucleo de Litecoin...</translation>
+        <source>Saint Core is shutting down...</source>
+        <translation>Apagando el nucleo de Saint...</translation>
     </message>
     <message>
         <source>Do not shut down the computer until this window disappears.</source>
@@ -821,8 +821,8 @@
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Litecoin Core</source>
-        <translation>nucleo Litecoin</translation>
+        <source>Saint Core</source>
+        <translation>nucleo Saint</translation>
     </message>
     <message>
         <source>The Bitcoin Core developers</source>
